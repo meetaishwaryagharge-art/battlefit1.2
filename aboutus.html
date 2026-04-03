@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BattleFit</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* Fonts */
+    body {
+        font-family:'Poppins', sans-serif;
+        color:white;
+        margin: 0;
+        padding: 0;
+    }
+    
+    :root {
+      --orange: #e8501a;
+      --orange-dark: #c73f0f;
+      --cream: #f5ede0;
+      --cream-dark: #ecdcc6;
+      --dark: #1a1a1a;
+      --text: #3a3a3a;
+      --muted: #777;
+      --white: #fff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 1px 12px rgba(0,0,0,.08);
+      padding: 0 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90px;
+    }
+    .logo img{
+height: 90px;
+width: 110px;
+    }
+   /* .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.35rem;
+      color: var(--dark);
+      text-decoration: none;
+    }
+    .logo img {
+      color: var(--orange);
+    }
+    .logo-badge {
+      background: var(--orange);
+      color: white;
+      font-size: .65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      letter-spacing: .5px;
+    }*/
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    nav ul a:hover { color: var(--orange); }
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: .3s; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--cream);
+      padding: 5rem 5% 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-illustration {
+      position: relative;
+    }
+    .hero-illustration img {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      border-radius: 16px;
+      animation: floatAnim 4s ease-in-out infinite;
+    }
+    @keyframes floatAnim {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    
+
+    /* ── WHO ARE WE ── */
+    .who {
+      background: #f9f9f9;
+      padding: 5rem 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .who-content { max-width: 480px; 
+  margin-bottom: auto;
+    }
+    .who-content img{
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      border-radius: 16px;
+      animation: floatAnim 4s ease-in-out infinite;
+    }
+    @keyframes floatAnim {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    
+    
+   /* .choose-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .who-desc {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: .95rem;
+      margin-bottom: 2rem;
+      
+    }*/
+    
+
+    /* ── medals ──
+    .medals {
+      background: var(--cream);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .medals .medals-title { margin-bottom: .5rem; }*/
+/*medal*/
+    .stats-section {
+  background: var(--orange) ;
+  padding: 70px 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  color:black;
+}
+
+.stat-box {
+  padding: 0 40px;
+  border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.stat-box:last-child {
+  border-right: none;
+}
+
+.stat-box h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.stat-box h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+
+    
+
+    /* ── Location ── */
+    .location {
+      background: #f9f9f9;
+      padding: 5rem 5%;
+      text-align: center;
+    }
+     .location-title { margin-bottom: .5rem; }
+     .location-section{
+  background:#f2f2f2;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.location-section .title{
+  font-size:32px;
+  margin-bottom:30px;
+  font-weight:600;
+}
+
+.location-box{
+  margin-bottom:30px;
+}
+
+.location-box h3{
+  font-size:22px;
+  margin-bottom:15px;
+  font-weight:600;
+}
+
+.location-item{
+  margin-bottom:15px;
+}
+
+.location-item h4{
+  font-size:18px;
+  margin-bottom:5px;
+  color:#333;
+}
+
+.location-item p{
+  max-width:800px;
+  margin:auto;
+  line-height:1.6;
+}
+
+.club-list{
+  list-style:none;
+  padding:0;
+}
+
+.club-list li{
+  margin:8px 0;
+  font-size:16px;
+}
+    
+    /* ── certifications ── */
+    .certification{
+      background: var(--cream);
+      padding: 5rem 5%;
+      text-align: center;
+    }
+    .certification-title { margin-bottom: .5rem; }
+
+    .certification-gallery{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.certification-card{
+  width:350px;
+}
+
+.certification-card img{
+  width:100%;
+  height:auto;
+  transition:0.3s;
+}
+
+.certification-card img:hover{
+  transform:scale(1.05);
+}
+    
+ /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+     .footer-col  h3{color: #e8501a;}
+    footer p { color: white;font-size: .85rem; }
+    footer p a { color: white; text-decoration: none; }
+    .footer p a:hover{ background: #e8501a;}
+    .footer-socials { display: flex; gap: .75rem; }
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .footer-socials a:hover { background: #e8501a; }
+    .footer-socials svg { width: 16px; height: 16px; fill: white; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-inner div {
+        margin-bottom: 25px;
+    }
+}
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .services-grid,
+      .testimonials-grid,
+      .transform-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      nav ul { display: none; }
+      .hamburger { display: flex; }
+      nav ul.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1.5rem 5%;
+        gap: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,.1);
+      }
+      .hero,
+      .who,
+      .contact {
+        grid-template-columns: 1fr;
+        padding: 3rem 5%;
+      }
+      .hero-illustration { order: -1; }
+      .hero-illustration img { max-width: 100%; }
+      .who-image { order: -1; }
+      .who-image img { max-width: 100%; }
+      .services-grid,
+      .testimonials-grid,
+      .transform-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-row.triple { grid-template-columns: 1fr; }
+      .contact-image { display: none; }
+      footer { flex-direction: column; text-align: center; }
+      .badge-float { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+  
+     <div class="logo">
+            <img src="logo.webp" alt="Fit Logo">
+        </div>
+        
+    </a>
+    <ul id="nav-menu">
+      <a href="index.html"><li>Home</li></a>
+      <a href="service.html"><li>Services</li></a>
+      <a href="aboutus.html"><li>Academy</li></a>
+      <a href="event.html"><li>Events</li></a>
+       <a href="marchandies.html"><li>Merchandises</li></a>
+      <a href="contact.html"><li>Contact Us</li></a>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="document.getElementById('nav-menu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-illustration fade-up">
+      <img src="Academy About us.webp" alt="Fitness illustration" />
+    </div>
+    <div class="hero-content fade-up">
+      <h1>About us</h1>
+      </div>
+    </div>
+  </section>
+
+<!--choose-->
+
+<section class="who">
+    <div class="who-content fade-up">
+      <img src="Why chose Battle fit Academy .webp" alt="Fitness illustration" />
+    </div>
+    <div class="choose-title"></h2>
+      <h1>Why Choose Battlefit Accademy?</h1><br>
+      <ul class="who-desc">
+        <li>Expert Trainers: Our certified coaches design workouts trailored to your unique goals.</li>
+          <li>Comprehensive Fitness: From strength training to cardio,functional fitness, and nutrition guidance, we cover it all.</li>
+          <li>Flexible Training Options: Join us in person or train virtually from anywhere in India, Dubai,or canada.</li>
+           <li>Community & Support:A Motivating environment where beginners and athlets thrive together.</li>
+        </ul>
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- medals 
+  <section class="medals" id="medals">
+    <h2 class="medals-title">Medals and Black belt Count</h2>
+  </section>-->
+
+
+  <!--medal-->
+<section class="stats-section">
+  <div class="stat-box">
+    <h2>50+</h2>
+    <h4>International medals</h4>
+  </div>
+
+  <div class="stat-box">
+    <h2>250+</h2>
+    <h4>National Medals </h4>
+   
+  </div>
+
+  <div class="stat-box">
+    <h2>30+</h2>
+    <h4>black Belt</h4>
+  
+  </div>
+
+</section>
+
+  <!-- Location -->
+  <section class="location">
+    <h2 class="location-title">Location And their Timings</h2>
+  
+<b>1)Girgaon</b><br>
+CHIN UP STUDIO ,opp greens hotel , beside Sai Dham Mandir , Girgaon , Charni Road East ,<br> Shapur Baug , Mumbai ,Maharashtra , 400007 04, Girgaon, Mumbai, Maharashtra 400004<br>
+<b>2) Dadar</b><br>
+1st Floor Ranina Nursery , Opp J . B . Vachha Girls High School ,Dadar Parsi Colony near <br>Five Garden , Mumbai<br>
+
+<h3>Affiliated Club</h3> 
+1) KINSOU Martial Arts Academy ( Pune )<br>
+
+2) WCFC MMA fight Gym ( Amravati )
+  </section>
+
+  <!-- certifications -->
+  <section class="certification">
+    <h2 class="certification-title">CERTIFICATION WE PROVIED</h2>
+     <div class="certification-gallery">
+
+      <div class="certification-card">
+        <img src="grapping (2).png" alt="Battle Fit certification">
+      </div>
+
+      <div class="certification-card">
+        <img src="striking.png" alt="Battle Fit certification">
+      </div>
+      <div class="certification-card">
+        <img src="self.png" alt="Battle Fit certification">
+      </div>
+
+    </div>
+     </section>
+<!-- FOOTER -->
+  <footer>
+    <!--<p>© <a href="#">Battle Fit India</a></p>-->
+ <div class="footer-col">
+                <h3>Battle Fit India</h3>
+                <p>Fitness that challenge your body<br> and sharpens your discipline.</p>
+                
+            </div>
+
+    <div class="footer-col">
+      <h3>Pages</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="service.html">Services</a></p>
+                <p><a href="aboutus.html">AboutUs</a></p>
+                <p><a href="marchandies.html">Merchandises</a></p>
+            </div>
+
+            <div class="footer-col">
+      <h3>Location</h3>
+       <p>Girgaon Mumbai, India.</p>
+
+                
+            </div>
+
+
+<div class="footer-col">
+  <h3>Social Media</h3>
+     <div class="footer-socials">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/reel/DUnRzxejNGK/?igsh=MTdtaG52c29nbXdhNA==" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a><br>
+      <!-- YouTube -->
+      <a href="https://youtube.com/@battle_fit?si=5Dxr4erJYiRjOI0" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+        </svg>
+      </a><br>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/919820842939" aria-label="WhatsApp" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.52 3.48A11.83 11.83 0 0 0 12.03 0C5.39 0 .02 5.37.02 12c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.61A11.93 11.93 0 0 0 12.03 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.51-8.52zM12.03 21.82c-1.79 0-3.55-.48-5.09-1.38l-.36-.21-3.66.96.98-3.57-.23-.37a9.77 9.77 0 0 1-1.5-5.25c0-5.42 4.41-9.83 9.84-9.83 2.63 0 5.1 1.02 6.95 2.88a9.78 9.78 0 0 1 2.88 6.95c0 5.43-4.41 9.84-9.84 9.84zm5.42-7.37c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.49-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37s-1.05 1.02-1.05 2.49 1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.09 4.48.71.31 1.27.49 1.71.63.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/>
+  </svg>
+</a>
+     <a href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.037-1.851-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.368-1.849 3.598 0 4.263 2.368 4.263 5.455v6.285zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM6.813 20.452H3.861V9h2.952v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+</a>
+    </div>
+    </div>
+   
+  </footer>
+ 
+  <script>
+    // Scroll animation observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Stagger cards
+    document.querySelectorAll('.services-grid .service-card, .testimonials-grid .testimonial-card, .transform-grid .transform-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.12}s`;
+    });
+
+    // Form submit handler
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      btn.textContent = '✓ Message Sent!';
+      btn.style.background = '#2e7d32';
+      setTimeout(() => {
+        btn.textContent = 'Submit →';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
